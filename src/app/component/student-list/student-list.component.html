@@ -1,0 +1,25 @@
+<div class="container">
+    <br />
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>LastName</td>
+                    <td>FirstMidName</td>
+                    <td>EnrollmentDate</td>
+                    <td>FullName</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let student of students">
+                    <td>{{  student.ID}}</td>
+                    <td>{{  student.LastName}}</td>
+                    <td>{{  student.FirstMidName}}</td>
+                    <td>{{  student.EnrollmentDate}}</td>
+                    <td>{{  student.FullName}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
