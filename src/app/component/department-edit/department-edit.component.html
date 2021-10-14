@@ -1,0 +1,44 @@
+<div class="contaainer">
+    <h2>Edit</h2>
+    <hr>
+
+    <div class="form-row" *ngIf="showMsg">
+        <div class="alert alert-{{type}} cold-md-12" role="alert">
+            {{msg}}
+        </div>
+    </div>
+
+    <form #departmentForm="ngForm">
+        <div class="form-row">
+            <div class="col-md-3 form-floating">
+                <input type='text' id="Name" name="Name" placeholder="Enter the Name" class="form-control"
+                    #Name [(ngModel)]="department.Name" autocomplete="off"/> 
+                <label for="Name">Name</label>
+            </div>
+            <div class="col-md-3 form-floating">
+                <input type='number' id="Budget" name="Budget" placeholder="Enter the Budget" class="form-control"
+                    #Budget [(ngModel)]="department.Budget" autocomplete="off"/>
+                    <label for="Budget">Budget</label>
+            </div>
+            <div class="col-md-3 form-floating">
+                <input type='text' id="StartDate" name="StartDate" placeholder="Enter the StartDate" class="form-control"
+                #StartDate [(ngModel)]="department.StartDate" autocomplete="off"/>
+                <label for="StartDate">StartDate</label>
+            </div>
+            <div class="col-md-3 form-floating"> 
+                <select id="InstructorID" name="InstructorID" class="form-control"
+                    #InstructorID [(ngModel)]="department.InstructorID">
+                    <option *ngFor="let item of instructors" [value]="item.ID">{{ item.FirstMidName}} - {{item.LastName}}</option>
+                </select>               
+                    <label for="InstructorID">Instructor</label>
+            </div>
+        </div>
+        <br>
+        <div>
+            <button class="btn btn-outline-primary" (click)="edit()">Edit</button>
+            <a class="btn btn-outline-primary" [routerLink]="['/department-list']">Back</a>
+        </div>
+
+    </form>
+</div>
+
